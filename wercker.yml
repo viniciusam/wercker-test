@@ -1,0 +1,19 @@
+box:
+  id: viniciusam/oracledb
+  username: $DOCKER_USERNAME
+  password: $DOCKER_PASSWORD
+  tag: client-tools
+
+services:
+  - name: oracledb
+    id: viniciusam/oracledb
+    username: $DOCKER_USERNAME
+    password: $DOCKER_PASSWORD
+    tag: 12c-se-r1
+
+build:
+  steps:
+    - script:
+        name: sqlcl version
+        code: |
+          sql -v
